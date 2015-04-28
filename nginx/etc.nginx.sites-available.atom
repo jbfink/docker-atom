@@ -1,0 +1,53 @@
+upstream atom {
+  server unix:/var/run/php5-fpm.atom.sock;
+}
+
+server {
+
+  listen 80;
+  root /usr/share/nginx/atom;
+
+  # http://wiki.nginx.org/HttpCoreModule#server_name
+  # _ means catch any, but it's better if you replace this with your server
+  # name, e.g. archives.foobar.com
+  server_name _;
+
+  client_max_body_size 72M;
+
+  # http://wiki.nginx.org/HttpCoreModule#try_files
+  location / {
+    try_files $uri /index.php?$args;
+  }
+
+  location ~ /\. {
+    deny all;
+    return 404;
+  }
+
+  location ~* (\.yml|\.ini|\.tmpl)$ {
+    deny all;
+    return 404;
+  }
+
+  location ~* /(?:uploads|files)/.*\.php$ {
+    deny all;
+    return 404;
+  }
+
+  # This is the most important part, as here we are redirecting some specific
+  # requests to PHP-FPM so PHP can do its job passing data to and from the
+  # web server.
+  location ~ ^/(index|qubit_dev)\.php(/|$) {
+    include /etc/nginx/fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_split_path_info ^(.+\.php)(/.*)$;
+    fastcgi_pass atom;
+  }
+
+  location ~* \.php$ {
+    deny all;
+    return 404;
+  }
+
+}
+
