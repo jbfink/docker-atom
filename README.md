@@ -2,7 +2,7 @@ docker-atom
 -----------
 Eventually, a [Docker](http://docker.com) [Compose](https://docs.docker.com/compose/) recipe for [Artefactual](http://www.artefactual.com/)'s [Access To Memory](http://www.artefactual.com/services/atom-2/) software. 
 
-Note that I've only tested this on 64bit native Linux using Docker directly, so if you're using boot2docker or a VM things might be different.
+Note that I've only tested this on 64bit native Linux using Docker directly, so if you're using [boot2docker](https://github.com/boot2docker/boot2docker) or a VM things might be different.
 
 To use:
 
