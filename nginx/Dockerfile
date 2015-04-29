@@ -6,10 +6,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python-setuptools vim-tiny
 ADD ./etc.nginx.sites-available.atom /etc/nginx/sites-available/atom
 RUN ln -s /etc/nginx/sites-available/atom /etc/nginx/sites-enabled/atom
 RUN rm /etc/nginx/sites-enabled/default
-RUN easy_install supervisor
-RUN mkdir /var/log/supervisor/
 ADD http://storage.accesstomemory.org/releases/atom-2.1.2.tar.gz /usr/share/nginx/
 RUN ln -s /usr/share/nginx/atom-2.1.2 /usr/share/nginx/atom
-
+RUN easy_install supervisor
+RUN mkdir /var/log/supervisor/
 #EXPOSE 80
 #CMD ["/bin/bash", "/start.sh"]
