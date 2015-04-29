@@ -3,3 +3,6 @@ mysql:
 
 elasticsearch:
   image: elasticsearch
+
+nginx:
+  build: nginx/.
