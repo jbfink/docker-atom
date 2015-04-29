@@ -14,6 +14,9 @@ RUN tar xzf /atom-2.1.2.tar.gz -C /usr/share/nginx/atom --strip 1
 RUN chown -R www-data:www-data /usr/share/nginx/atom
 RUN mv /etc/php5/fpm/php-fpm.conf /etc/php5/fpm/php-fpm.conf.bak
 RUN sed -e "s/;daemonize\ =\ yes/daemonize\ =\ no/" /etc/php5/fpm/php-fpm.conf.bak  > /etc/php5/fpm/php-fpm.conf 
+RUN mv /etc/php5/fpm/php.ini /etc/php5/fpm/php.ini.bak
+RUN sed -e "s/max_execution_time\ =\ 30/max_execution_time\ =\ 300/" /etc/php5/fpm/php.ini.bak > /etc/php5/fpm/php.ini
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN easy_install supervisor
 RUN mkdir /var/log/supervisor/
 ADD ./supervisord.conf /etc/supervisord.conf
