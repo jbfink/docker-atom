@@ -17,11 +17,12 @@ RUN sed -e "s/;daemonize\ =\ yes/daemonize\ =\ no/" /etc/php5/fpm/php-fpm.conf.b
 RUN mv /etc/php5/fpm/php.ini /etc/php5/fpm/php.ini.bak
 RUN sed -e "s/max_execution_time\ =\ 30/max_execution_time\ =\ 300/" /etc/php5/fpm/php.ini.bak > /etc/php5/fpm/php.ini
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-ADD ./db-create.sql /db-create.sql
+RUN mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+RUN sed -e  "/http\ {/{n;s/.*/fastcgi_read_timeout 300;/}" /etc/nginx/nginx.conf.bak > /etc/nginx/nginx.conf
 RUN easy_install supervisor
 RUN mkdir /var/log/supervisor/
 ADD ./supervisord.conf /etc/supervisord.conf
 #ENTRYPOINT ["/usr/local/bin/supervisord" "-n"]
 
 #EXPOSE 80
-#CMD ["/bin/bash", "/start.sh"]
+CMD ["/bin/bash", "supervisord -n"]

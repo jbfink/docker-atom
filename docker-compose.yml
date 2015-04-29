@@ -6,3 +6,10 @@ elasticsearch:
 
 nginx:
   build: nginx/.
+  links:
+   - mysql
+   - elasticsearch:es     
+  ports:
+   - "8000:80"  
+  command: supervisord -n
+
