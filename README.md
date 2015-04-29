@@ -12,7 +12,7 @@ To use:
 4. Watch things build! Fun!
 5. Wait a titch after everything's finished building. Maybe 30 seconds.
 6. Visit port 8000 in whatever machine you've run docker on, e.g., http://localhost:8000.
-7. Fill in the web config fields! For the database portion, it's ```atom``` for the database, ```atom``` for the user, ```worstpass``` for the password. Be sure to go to advanced config and set your database as ```db```. For Elasticsearch, the server name is ```es```.
+7. Fill in the web config fields! For the database portion, it's ```atom``` for the database, ```atom``` for the user, ```worstpass``` for the password. Be sure to go to advanced config and change your server from ```localhost``` to ```db```. For Elasticsearch, the server name is ```es```.
 8. It'll take around a minute for AtoM to shake itself out.
 9. Share and enjoy!
 
