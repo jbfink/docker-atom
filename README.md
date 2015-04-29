@@ -16,7 +16,7 @@ To use:
 8. It'll take around a minute for AtoM to shake itself out.
 9. Share and enjoy!
 
-Note: This is meant for DEVELOPMENT PURPOSES ONLY. Don't try to run AtoM in production with Docker Compose.
+Note: This is meant for development and testing purposes only. Don't try to run AtoM in production with Docker Compose.
 
 If you dig into the directories and change things (like the atom database password or user) be sure to execute ```docker-compose rm``` followed by ```docker-compose build``` before you do another ```docker-compose up```
 
