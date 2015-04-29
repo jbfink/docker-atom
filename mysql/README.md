@@ -1,0 +1,2 @@
+I apologize for the *terrible* hacky way that this container is organized. The way that Docker Compose works is that it pretty much tries to bring up every container at once, so trying to populate the mysql container the Correct Way, viz, connecting to the server using a client and running sql code to create the atom user and db, actually is hard to organize because the mysql server takes a while to start listening on 3306. Hence, the entrypoint file edits. ugh.
+
