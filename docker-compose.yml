@@ -7,7 +7,7 @@ elasticsearch:
 nginx:
   build: nginx/.
   links:
-   - mysql
+   - mysql:db
    - elasticsearch:es     
   ports:
    - "8000:80"  
