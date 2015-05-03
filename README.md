@@ -1,5 +1,7 @@
 docker-atom
 -----------
+*NB* this *doesn't* work right now due to AtoM generating a config/search.yml file that inexplicably generates the port for Elasticsearch in single quotes, e.g., '9200'. I've [reported](https://groups.google.com/forum/#!topic/ica-atom-users/p7ACO3jKZv8) this to Artefactual folks; hopefully a fix will be forthcoming. In the meantime, the brave can run this and edit the nginx container's /usr/share/nginx/atom/config/search.yml and change ```'9200'``` tp ```9200```. Sorry about that.
+
 This is a [Docker](http://docker.com) [Compose](https://docs.docker.com/compose/) recipe for [Artefactual](http://www.artefactual.com/)'s [Access To Memory](http://www.artefactual.com/services/atom-2/) software. 
 
 Note that I've only tested this on 64bit native Linux using Docker directly, so if you're using [boot2docker](https://github.com/boot2docker/boot2docker) or a VM things might be different.
