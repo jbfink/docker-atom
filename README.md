@@ -22,7 +22,7 @@ To use:
 
 ```docker exec dockeratom_nginx_1 service php5-fpm stop```
 
-Note that the container name (```dockeratom_nginx_1```) might be different in your setup. Run ```docker ps```  to figure out what the name of your nginx container is. Also, this does stop FPM but supervisord will immediately start FPM again, so don't be put off by the "stop" there in the ``service``` command.
+Note that the container name (```dockeratom_nginx_1```) might be different in your setup. Run ```docker ps```  to figure out what the name of your nginx container is. Also, this does stop FPM but supervisord will immediately start FPM again, so don't be put off by the "stop" there in the ```service``` command.
 
 Share and enjoy! 
 
