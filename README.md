@@ -23,7 +23,8 @@ To use:
 ```docker exec dockeratom_nginx_1 service php5-fpm stop```
 
 Note that the container name (```dockeratom_nginx_1```) might be different in your setup. Consult docker ps to figure out what the name of your nginx container is.
-11. Share and enjoy!
+
+Share and enjoy! 
 
 Note: This is meant for development and testing purposes only. Don't try to run AtoM in production with Docker Compose.
 
