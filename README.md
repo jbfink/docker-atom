@@ -1,6 +1,5 @@
 docker-atom
 -----------
-*NB* This *doesn't* work now for reasons that I'm not entirely sure of. It works when you bring up each container outside of Compose, so eventually I'll branch this off and make an annoying non-Compose method. If *you* know why it doesn't work, please submit a pull request!! Thanks.
 
 
 This is a [Docker](http://docker.com) [Compose](https://docs.docker.com/compose/) recipe for [Artefactual](http://www.artefactual.com/)'s [Access To Memory](http://www.artefactual.com/services/atom-2/) software. 
