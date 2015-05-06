@@ -18,7 +18,7 @@ To use:
 7. Fill in the web config fields! For the database portion, it's ```atom``` for the database, ```atom``` for the user, ```worstpass``` for the password. Be sure to go to advanced config and change your server from ```localhost``` to ```db```. For Elasticsearch, the server name is ```es```.
 8. It'll take around a minute for AtoM to shake itself out.
 9. Fill in your site information, go to your new site.
-10. Note that there is a bug with php5-fpm - after your new site comes up, the "Browse By" links on the left may be nonfunctional -- you may get 500 errors. To fix that, run the following line in your shell:
+10. Note that there is a bug with php5-fpm - after your new site comes up, the "Browse By" links on the left may be nonfunctional -- you may get 500 errors. To fix that, run the following line in a new shell or terminal window:
 
 ```docker exec dockeratom_nginx_1 service php5-fpm stop```
 
