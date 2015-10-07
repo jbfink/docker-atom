@@ -11,6 +11,8 @@ RUN rm /etc/php5/fpm/pool.d/www.conf
 ADD http://storage.accesstomemory.org/releases/atom-2.2.0.tar.gz /
 RUN mkdir /usr/share/nginx/atom
 RUN tar xzf /atom-2.2.0.tar.gz -C /usr/share/nginx/atom --strip 1
+RUN rm /usr/share/nginx/atom/config/config.php
+RUN rm /usr/share/nginx/atom/config/search.yml
 RUN chown -R www-data:www-data /usr/share/nginx/atom
 RUN mv /etc/php5/fpm/php-fpm.conf /etc/php5/fpm/php-fpm.conf.bak
 RUN sed -e "s/;daemonize\ =\ yes/daemonize\ =\ no/" /etc/php5/fpm/php-fpm.conf.bak  > /etc/php5/fpm/php-fpm.conf 
