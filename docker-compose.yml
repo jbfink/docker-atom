@@ -2,7 +2,7 @@ mysql:
   build: mysql/.
 
 elasticsearch:
-  image: elasticsearch
+  build: es/.
 
 nginx:
   build: nginx/.
