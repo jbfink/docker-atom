@@ -385,3 +385,4 @@
 #http.jsonp.enable: true
 # jbfink custom settings:
 es.http.timeout: 5m
+cluster.routing.allocation.disk.threshold_enabled: false
