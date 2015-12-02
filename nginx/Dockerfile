@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 MAINTAINER John Fink <john.fink@gmail.com>
+VOLUME foo:/usr/share/nginx/atom
 RUN apt-get update # Wed Oct  7 14:31:52 EDT 2015
 #RUN apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python-setuptools vim-tiny nginx php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php-apc php5-readline mysql-client sed git gearman-job-server software-properties-common

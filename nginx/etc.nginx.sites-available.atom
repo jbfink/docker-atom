@@ -1,5 +1,5 @@
 upstream atom {
-  server unix:/var/run/php5-fpm.atom.sock;
+  server php:9000;
 }
 
 server {
@@ -43,7 +43,7 @@ server {
     set $index /index.php;
     fastcgi_param SCRIPT_FILENAME $document_root$index;
     fastcgi_param SCRIPT_NAME $index;
-    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_pass php:9000;
   }
 
   location ~ ^/private/(.*)$ {
@@ -55,7 +55,7 @@ server {
     include /etc/nginx/fastcgi_params;
     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
     fastcgi_split_path_info ^(.+\.php)(/.*)$;
-    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_pass php:9000;
   }
 
   location ~* \.php$ {
